@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class Controller {
 
-    // private BeanFactory beanFactory = new BeanFactory();
-
     @GetMapping("/hello")
     public String helloWorld() {
         return "Hello world from TestCodeQL";
@@ -19,8 +17,6 @@ public class Controller {
 
     @GetMapping("/resource/{id}")
     public String getResource(@PathVariable String id) {
-        // return String.format("Resource id [%s]", id);
-
         return new Service().getResource(id);
     }
 

@@ -6,10 +6,9 @@ import org.springframework.web.client.RestTemplate;
 @org.springframework.stereotype.Service
 public class Service {
 
-    // @Bean
-    // private RestTemplate rt = new RestTemplate();
+    private RestTemplate rt = new RestTemplate();
 
     public String getResource(String id) {
-        return String.format("Resource from service [%s]", id);
+        return rt.getForObject("http://echo.jsontest.com/resource/" + id, String.class);
     }
 }
